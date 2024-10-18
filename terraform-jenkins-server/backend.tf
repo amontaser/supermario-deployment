@@ -6,6 +6,6 @@ terraform {
     # Specify the AWS region where the bucket is located
     region = "us-east-1"
     # Specify the path within the bucket to store the state file
-    key = "terraform.tfstate"
+    key = "jenkins-server/terraform.tfstate"
   }
 }
