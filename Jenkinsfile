@@ -26,7 +26,7 @@ pipeline {
                 script {
                     dir('kubernetes') {
                         // Update packages inside the cluster
-                        sh "aws eks update-kubeconfig --name eks-cluster"
+                        sh "aws eks update-kubeconfig --name supermario-eks-cluster"
                         //  Deploy an application
                         sh "kubectl apply -f deployment.yaml"
                         //  Deploy a service
