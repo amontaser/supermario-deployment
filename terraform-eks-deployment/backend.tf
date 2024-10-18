@@ -4,7 +4,7 @@ terraform {
     # Specify the name of the S3 bucket to store the state file
     bucket = "supermario2030"
     # Specify the AWS region where the bucket is located
-    region = "ap-south-1"
+    region = "us-east-1b"
     # Specify the path within the bucket to store the state file
     key = "terraform.tfstate"
   }
