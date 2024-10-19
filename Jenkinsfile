@@ -25,12 +25,11 @@ pipeline {
             steps {
                 script {
                     dir('kubernetes') {
-                        // Update packages inside the cluster
-                        sh "aws eks update-kubeconfig --name supermario-eks-cluster"
-                        //  Deploy an application
-                        sh "kubectl apply -f deployment.yaml"
-                        //  Deploy a service
-                        sh "kubectl apply -f service.yaml"
+                        sh "aws eks get-token --cluster-name supermario-eks-cluster | kubectl apply -f -"
+                        sh "aws eks update-kubeconfig --name supermario-eks-cluster --region us-east-1"
+                        sh "kubectl config view --raw"
+                        sh "kubectl apply -f deployment.yaml -v=8"
+                        sh "kubectl apply -f service.yaml -v=8"
                     }
                 }
             }
